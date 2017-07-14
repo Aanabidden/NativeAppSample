@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		90B57F9C1F18F37F002526EF /* NativeAppSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NativeAppSample.entitlements; sourceTree = "<group>"; };
 		90BF6BA81F188E80008918AF /* NativeAppSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeAppSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90BF6BAC1F188E80008918AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		90BF6BAE1F188E80008918AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 		90BF6BAA1F188E80008918AF /* NativeAppSample */ = {
 			isa = PBXGroup;
 			children = (
+				90B57F9C1F18F37F002526EF /* NativeAppSample.entitlements */,
 				90BF6BAE1F188E80008918AF /* AppDelegate.h */,
 				90BF6BAF1F188E80008918AF /* AppDelegate.m */,
 				90BF6BB11F188E80008918AF /* ViewController.h */,
@@ -207,6 +209,12 @@
 				TargetAttributes = {
 					90BF6BA71F188E80008918AF = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = W44UVUWZ59;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 					90BF6BC01F188E81008918AF = {
 						CreatedOnToolsVersion = 7.3;
@@ -415,9 +423,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NativeAppSample/NativeAppSample.entitlements;
 				INFOPLIST_FILE = NativeAppSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.deltecscom.deltecs.NativeAppSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deltecs.DronaLite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -426,9 +436,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NativeAppSample/NativeAppSample.entitlements;
 				INFOPLIST_FILE = NativeAppSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.deltecscom.deltecs.NativeAppSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deltecs.DronaLite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -498,6 +510,7 @@
 				90BF6BD71F188E81008918AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90BF6BD81F188E81008918AF /* Build configuration list for PBXNativeTarget "NativeAppSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +519,7 @@
 				90BF6BDA1F188E81008918AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90BF6BDB1F188E81008918AF /* Build configuration list for PBXNativeTarget "NativeAppSampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +528,7 @@
 				90BF6BDD1F188E81008918AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

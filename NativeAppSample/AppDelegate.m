@@ -14,6 +14,28 @@
 
 @implementation AppDelegate
 
+#pragma mark - App Opened via Scheme
+
+// availble in iOS 9 and above
+
+-(BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler{
+    if ([userActivity.activityType isEqualToString: NSUserActivityTypeBrowsingWeb]) {
+        NSURL *url = userActivity.webpageURL;
+        NSLog(@"URL_ %@", url);
+        NSLog(@"Restoration HAndler - %@", restorationHandler);
+        NSString *strQuery = [url query];
+        //Use nonce & uid to make a http call to DronaHQ users API
+        return YES;
+    }
+    return YES;
+}
+
+// Supported in iOS 8 and below
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    NSLog(@"Redirected into app URL from App: %@ url Scheme: %@",sourceApplication, url);
+    NSLog(@"URL_ %@", url);
+    return YES;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
